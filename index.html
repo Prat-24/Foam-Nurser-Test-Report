@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foam Nurser Test Report</title>
+</head>
+
+<body>
+
+    <div class="form-container" id="pdf-content">
+        <table class="header-table">
+            <tr>
+                <td rowspan="2" style="width: 10%; text-align: center;">
+                    <img src="hpcl-logo.png" alt="HP Logo" class="hp-logo">
+                </td>
+                <td class="header-left">
+                    <strong>Hindustan Petroleum Corporation Limited</strong><br><br>
+                    Mumbai Refinery
+                </td>
+                <td rowspan="3" class="header-right">
+                    Issue No: 1<br>
+                    Issue Date: 8/11/2024<br>
+                    Rev No: 0<br>
+                    Rev Date:<br>
+                    <span class="no-wrap">Doc No: HPCL MR/FRM/F&S/08200-04</span>
+                </td>
+                
+            </tr>
+            <tr>
+                <td class="header-left">
+                    <strong>Testing Of Nurser Truck</strong>
+                </td>
+               
+            </tr>
+        </table>
+       
+
+        <!-- Date and Shift -->
+        <div class="flex-row">
+            <div class="form-group">
+                <label>DATE:</label>
+                <input type="date" name="date">
+            </div>
+
+            <div class="form-group">
+                <label>SHIFT:</label>
+                <input type="text" name="shift">
+            </div>
+        </div>
+
+        <!-- Status Section -->
+        <h3>1.VEHICLE CHECK</h3>
+        <table>
+            <tr>
+                <td>Body Condition</td>
+                <td><select name="Bodycondition">
+                        <option value="">Select</option>
+                        <option>Okay</option>
+                        <option>Not Okay</option>
+                    </select></td>
+                <td>Air Pressure</td>
+                <td><select name="Airpressure">
+                        <option value="">Select</option>
+                        <option>Full</option>
+                        <option>Empty</option>
+                        <option>Low</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td>Engine oil</td>
+                <td><select name="Engineoil">
+                        <option value="">Select</option>
+                        <option>Full</option>
+                        <option>Empty</option>
+                        <option>Low</option>
+                    </select></td>
+                <td>Ammeter</td>
+                <td><select name="Ammeter">
+                        <option value="">Select</option>
+                        <option>Okay</option>
+                        <option>Not Okay</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td>Radiator water</td>
+                <td><select name="Radiatorwater">
+                        <option value="">Select</option>
+                        <option>Full</option>
+                        <option>Empty</option>
+                        <option>Low</option>
+                    </select></td>
+                <td>Valve linkages</td>
+                <td><select name="ValveLinkages">
+                        <option value="">Select</option>
+                        <option>Okay</option>
+                        <option>Not Okay</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td>Tyre condition</td>
+                <td><select name="Tyrecondition">
+                        <option value="">Select</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select></td>
+                <td>Vessel condition</td>
+                <td><select name="Vesselcondition">
+                        <option value="">Select</option>
+                        <option>Okay</option>
+                        <option>Not Okay</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td>Drain Valve Closed</td>
+                <td><select name="DrainValveClosed">
+                        <option value="">Select</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select></td>
+                <td>Pressure outlet closed</td>
+                <td><select name="PressureOutletClosed">
+                        <option value="">Select</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td>Tank suction pipe closed</td>
+                <td><select name="TankSuctionPipeClosed">
+                        <option value="">Select</option>
+                        <option>Closed</option>
+                        <option>Not Closed</option>
+                    </select></td>
+                <td>Wiper condition</td>
+                <td><select name="Wipercondition">
+                        <option value="">Select</option>
+                        <option>Okay</option>
+                        <option>Not Okay</option>
+                    </select></td>
+            </tr>
+        </table>
+
+        
+        <h3>2.STATIC RUN /TANK TO PUMP OPERATION</h3>
+        <table>
+            
+                <td>Pump Tested in Circulation/JRCP :-</td>
+                <td>
+                    <input type="text" name="Circulation/JRCP">
+                </td>
+            
+            <tr>
+              <td>Pump start time (HH:MM)</td>
+              <td>
+                <input type="time" name="starttime">
+              </td>
+              <td>Pump stop time (HH:MM)</td>
+              <td>
+                <input type="time" name="stoptime">
+              </td>
+            </tr>
+
+            <tr>
+                <td>PTO engagement in neutral </td>
+                <td><select name="PTO engagement">
+                        <option value="">Select</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select></td>
+
+                <td>Hand brakes working</td>
+                <td><select name="Handbrakes">
+                            <option value="">Select</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select></td>
+            </tr>
+
+            <tr>
+                <td>Tank to Pump Valve</td>
+                <td><select name="TanktoPump">
+                        <option value="">Select</option>
+                        <option>Okay</option>
+                        <option>Not okay</option>
+                    </select></td>
+
+                <td>Delivery outlet and valve</td>
+                <td><select name="Deliveryoutlet">
+                            <option value="">Select</option>
+                            <option>Okay</option>
+                            <option>Not okay</option>
+                        </select></td>
+            </tr>
+            <tr>
+                <td>Discharge Pressure</td>
+                <td>
+                  <input type="text" name="DischargePressure">
+                </td>
+                <td>Engine RPM</td>
+                <td>
+                  <input type="text" name="EngineRPM">
+                </td>
+              </tr>
+              <tr>
+                <td>Foam tank level before operation</td>
+                <td>
+                  <input type="text" name="beforeoperation">
+                </td>
+                <td>Foam tank level after operation</td>
+                <td>
+                  <input type="text" name="afteroperation">
+                </td>
+              </tr>
+
+              <tr>
+                <td>Flushing done with fresh water </td>
+                <td><select name="Flushingdone">
+                        <option value="">Select</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select></td>
+
+                <td>Recycle Valve Condition</td>
+                <td><select name="RecycleValve">
+                            <option value="">Select</option>
+                            <option>Okay</option>
+                            <option>Not okay</option>
+                        </select></td>
+            </tr>
+
+        </table>
+
+
+        <!-- Remarks and Observations -->
+        <div class="form-group">
+            <label>3.REMARKS</label>
+            <textarea id="msg1" name="remarks"></textarea>
+        </div>
+
+        <!--<div class="form-group">
+            <label>4.OTHER OBSERVATIONS</label>
+            <textarea id="msg2"name="Observations"></textarea>
+        </div>
+
+     
+       <div class="form-group">
+        <label>5.MAINTENANCE FOLLOW UP REQUIRED</label>
+        <textarea id="msg3" name="Maintenance"></textarea>
+    </div>-->
+
+    <div class="flex-row">
+        <div class="form-group">
+            <label>GARAGE(NOTIFICATION NUMBER):</label>
+            <input type="text" name="garage">
+        </div>
+        <div class="form-group">
+            <label>ROTARY(NOTIFICATION NUMBER):</label>
+            <input type="text" name="rotary">
+        </div>
+        <div class="form-group">
+            <label>INSTRUMENT(NOTIFICATION NUMBER):</label>
+            <input type="text" name="Instrument">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>4.TESTED BY:</label>
+        <input type="text" name="testedby">
+    </div>
+
+
+        <!-- Save as PDF Button (will be hidden in PDF) -->
+        <button id="saveAsPdf">Save as PDF</button>
+    </div>
+
+    <script src="script.js"></script>
+
+   
+</body>
+
+</html>
